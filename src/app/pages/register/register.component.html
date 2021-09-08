@@ -1,27 +1,27 @@
 <div class="container mt-5">
   <div class="row">
 
-    <form class="col-6 offset-3">
+    <form class="col-6 offset-3" [formGroup]="form" (ngSubmit)="submit()">
       <h1 class="h3 mb-3 font-weight-normal">Register</h1>
 
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="First name" required>
+        <input type="text" class="form-control" formControlName="firstName" placeholder="First name">
       </div>
 
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Last name" required>
+        <input type="text" class="form-control" formControlName="lastName" placeholder="Last name">
       </div>
 
       <div class="form-group">
-        <input type="email" class="form-control" placeholder="Email" required>
+        <input type="email" class="form-control" formControlName="email" placeholder="Email">
       </div>
 
       <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password" required>
+        <input type="password" class="form-control" formControlName="password" placeholder="Password">
       </div>
 
       <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password confirm" required>
+        <input type="password" class="form-control" formControlName="passwordConfirm" placeholder="Password confirm">
       </div>
 
       <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
