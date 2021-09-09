@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
   }
 
   submit(): void {
-    console.log(this.form.getRawValue());
     this.authService.login(this.form.getRawValue()).subscribe(() => {
       this.router.navigate(['/']);
     });
