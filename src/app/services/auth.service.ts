@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Login } from '../model/login.interface';
@@ -18,6 +18,10 @@ export class AuthService {
 
   login(data: Login): Observable<Login> {
     return this.http.post<Login>('http://localhost:8000/api/login', data);
+  }
+
+  logout(): Observable<any> {
+    return this.http.post('http://localhost:8000/api/logout', {});
   }
 
   fetchUser(): Observable<User> {
