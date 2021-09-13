@@ -1,6 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Forgot } from '../model/forgot.interface';
 import { Login } from '../model/login.interface';
 import { Register } from '../model/register.interface';
 import { User } from '../model/user.interface';
@@ -26,5 +27,9 @@ export class AuthService {
 
   fetchUser(): Observable<User> {
     return this.http.get<User>('http://localhost:8000/api/user');
+  }
+
+  forgot(data: Forgot): Observable<any> {
+    return this.http.post('http://localhost:8000/api/forgot', data);
   }
 }
