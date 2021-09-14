@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Forgot } from '../model/forgot.interface';
 import { Login } from '../model/login.interface';
 import { Register } from '../model/register.interface';
+import { Reset } from '../model/reset.interface';
 import { User } from '../model/user.interface';
 
 @Injectable({
@@ -31,5 +32,9 @@ export class AuthService {
 
   forgot(data: Forgot): Observable<any> {
     return this.http.post('http://localhost:8000/api/forgot', data);
+  }
+
+  reset(data: Reset): Observable<any> {
+    return this.http.post('http://localhost:8000/api/reset', data);
   }
 }
